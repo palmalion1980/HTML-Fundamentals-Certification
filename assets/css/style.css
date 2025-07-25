@@ -1,0 +1,133 @@
+/* 🔧 Reset general de márgenes, paddings y box model */
+* {
+    margin: 0; /* Elimina márgenes por defecto en todos los elementos */
+    padding: 0; /* Elimina el padding por defecto */
+    box-sizing: border-box; /* Hace que el padding y el borde se incluyan dentro del ancho y alto del elemento */
+}
+
+/* 🎯 Estilos base del body */
+body {
+    font-family: Arial, sans-serif; /* Fuente principal del sitio */
+    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura del viewport */
+    display: flex; /* Permite usar flexbox para estructurar el contenido vertical */
+    flex-direction: column; /* Hace que los hijos se acomoden de arriba hacia abajo */
+}
+
+/* 📦 Estilos compartidos para el navbar y el footer */
+.navbar, .footer {
+    display: flex; /* Activa Flexbox para alinear los hijos horizontalmente */
+    justify-content: space-between; /* Separa los elementos con espacio entre ellos */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 20px 30px; /* Espaciado interno */
+    background: white; /* Fondo blanco */
+}
+
+/* 🧱 Borde inferior para diferenciar visualmente el navbar */
+.navbar {
+    border-bottom: 2px solid black;
+}
+
+/* 🧱 Borde superior para diferenciar visualmente el footer */
+.footer {
+    border-top: 2px solid black;
+    margin-top: auto; /* Empuja el footer al final de la página gracias a Flexbox */
+}
+
+/* 🎨 Estilo del logo principal (navbar) */
+.logo {
+    font-size: 1.8em; /* Tamaño de fuente grande */
+    font-weight: bold; /* Negrita para destacarse */
+    text-decoration: none; /* Quita el subrayado */
+    display: flex; /* Permite alinear elementos dentro del logo si es necesario */
+    align-items: center; /* Alineación vertical */
+    color: black; /* Color del texto */
+}
+
+/* 🎨 Estilo del logo del footer */
+.footer-logo {
+    font-weight: lighter; /* Fuente más delgada */
+    color: black;
+    text-underline: none; /* Asegura que no se subraye (aunque debería ser text-decoration) */
+}
+
+/* 🔗 Estilos compartidos para los bloques de enlaces (listas) */
+.nav-links, .footer-links {
+    display: flex; /* Alinea los enlaces horizontalmente */
+    list-style: none; /* Quita los puntos de lista */
+    gap: 30px; /* Espacio entre cada enlace */
+    align-items: center;
+}
+
+/* 🎯 Estilo base de todos los enlaces */
+.nav-links a, .footer-links a {
+    text-decoration: none; /* Quita subrayado */
+    font-weight: 500; /* Seminegrita para resaltar sin exagerar */
+    padding: 8px 15px; /* Espaciado interno para hacerlo clicable */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: all 0.3s ease; /* Transición suave al hacer hover */
+    color: black;
+}
+
+/* 🖱️ Efecto hover para enlaces */
+.nav-links a:hover, .footer-links a:hover {
+    background: #f0f0f0; /* Fondo gris claro al pasar el mouse */
+    color: black;
+}
+
+/* 🧨 Botones de llamada a la acción (registro/contacto) */
+.cta-button, .contact-button {
+    padding: 10px 20px !important; /* Espaciado extra y forzado */
+    border: 2px solid black; /* Borde negro visible */
+    font-weight: bold; /* Texto fuerte */
+    color: black;
+}
+
+/* 🖱️ Efecto hover para botones */
+.cta-button:hover, .contact-button:hover {
+    background: black; /* Fondo negro */
+    color: white; /* Texto blanco para contraste */
+}
+
+/* 📄 Estilo para el contenido principal */
+.content {
+    flex: 1; /* Ocupa todo el espacio disponible en el layout */
+    padding: 40px; /* Espaciado interno amplio */
+    text-align: center; /* Centra el texto */
+}
+
+/* 📱 Estilos responsivos para pantallas pequeñas */
+@media (max-width: 600px) {
+
+    .navbar, .footer {
+        flex-direction: column; /* Coloca los elementos uno debajo del otro */
+        gap: 15px; /* Espacio entre elementos */
+    }
+
+    .nav-links, .footer-links {
+        gap: 20px; /* Espacio entre enlaces más reducido */
+    }
+
+    .nav-links a, .footer-links a {
+        padding: 8px 15px; /* Mantiene el padding clicable */
+        font-size: 0.9em; /* Texto un poco más pequeño para celulares */
+    }
+
+    .navbar {
+        padding-bottom: 30px;
+        padding-top: 18px;
+    }
+
+    .logo {
+        padding-bottom: 5px;
+    }
+
+    .footer {
+        padding-top: 25px;
+        padding-bottom: 35px;
+    }
+
+    .footer-logo {
+        padding-bottom: 15px;
+    }
+
+}
