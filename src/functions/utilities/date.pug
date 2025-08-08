@@ -1,0 +1,27 @@
+//-<script>
+-
+
+
+    //- Date_Long("12/07/2025") -> Sábado, 12 de Julio
+    const Date_Long = (dateString) => {
+        const [day, month, year] = dateString.split('/').map(Number);
+        const date = new Date(year, month - 1, day); // Recuerda que los meses van de 0 a 11
+
+        const options = {
+            weekday: 'long',
+            day: '2-digit',
+            month: 'long'
+        };
+
+        const formatted = date.toLocaleDateString('es-ES', options); // Ej: 'sábado, 12 de julio'
+
+        //- Capitalizar cada palabra
+        return formatted
+                .split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ');
+    }
+
+
+
+//-</script>

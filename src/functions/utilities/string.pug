@@ -1,9 +1,15 @@
 //-<script>
 -
 
-    //- Capitalize('maximiliano') -> Maximiliano
+    //- Capitalize
     const Capitalize = (string) => {
-        return string.charAt(0).toUpperCase() + string.slice(1);
+        return string
+                .split(' ')
+                .map(word =>
+                        word.charAt(0).toUpperCase() +     // primera letra en mayúscula
+                        word.slice(1).toLowerCase()        // el resto en minúscula
+                )
+                .join(' ');
     };
 
     //- Convert_URL('Javascript ® Fundamentals') -> javascript-fundamentals
@@ -37,9 +43,24 @@
         }
     };
 
+
+
     //- Format_USD('10000') -> USD 10.000
     const Format_USD = (amount) => {
-        return `USD ${amount.toLocaleString('es-ES')}`;
+        const numeric = Number(amount);
+        if (isNaN(numeric)) return 'USD 0,00'; // Manejo de errores para valores no numéricos
+        return `USD ${numeric.toLocaleString('es-ES', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })}`;
+    };
+
+
+    //- Format_CLP('10000') -> $10.000 CLP
+    const Format_CLP = (amount) => {
+        const numeric = Number(amount);
+        if (isNaN(numeric)) return '$0 CLP'; // Manejo de errores para valores no numéricos
+        return `$${numeric.toLocaleString('es-CL')} CLP`;
     };
 
 

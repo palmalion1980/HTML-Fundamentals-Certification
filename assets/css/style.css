@@ -1,115 +1,768 @@
-/* 🔧 Reset general de márgenes, paddings y box model */
+/* ⚙️ Configuración General ---------------------------------------------------> */
+
 * {
-    margin: 0; /* Elimina márgenes por defecto en todos los elementos */
-    padding: 0; /* Elimina el padding por defecto */
-    box-sizing: border-box; /* Hace que el padding y el borde se incluyan dentro del ancho y alto del elemento */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* 🎯 Estilos base del body */
 body {
-    font-family: Arial, sans-serif; /* Fuente principal del sitio */
-    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura del viewport */
-    display: flex; /* Permite usar flexbox para estructurar el contenido vertical */
-    flex-direction: column; /* Hace que los hijos se acomoden de arriba hacia abajo */
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* 📦 Estilos compartidos para el navbar y el footer */
-.navbar, .footer {
-    display: flex; /* Activa Flexbox para alinear los hijos horizontalmente */
-    justify-content: space-between; /* Separa los elementos con espacio entre ellos */
-    align-items: center; /* Centra verticalmente los elementos */
-    padding: 20px 30px; /* Espaciado interno */
-    background: white; /* Fondo blanco */
-}
 
-/* 🧱 Borde inferior para diferenciar visualmente el navbar */
+/* 🧩 Include: Navbar ---------------------------------------------------------------> */
+
 .navbar {
     border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-between; /* Espacio entre los elementos hijos */
+    align-items: center;
+    padding: 20px 30px;
+    background: white;
 }
 
-/* 🧱 Borde superior para diferenciar visualmente el footer */
-.footer {
-    border-top: 2px solid black;
-    margin-top: auto; /* Empuja el footer al final de la página gracias a Flexbox */
-}
-
-/* 🎨 Estilo del logo principal (navbar) */
 .logo {
-    font-size: 1.8em; /* Tamaño de fuente grande */
-    font-weight: bold; /* Negrita para destacarse */
-    text-decoration: none; /* Quita el subrayado */
-    display: flex; /* Permite alinear elementos dentro del logo si es necesario */
-    align-items: center; /* Alineación vertical */
-    color: black; /* Color del texto */
-}
-
-/* 🎨 Estilo del logo del footer */
-.footer-logo {
-    font-weight: lighter; /* Fuente más delgada */
+    font-size: 1.8em;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
     color: black;
-    text-underline: none; /* Asegura que no se subraye (aunque debería ser text-decoration) */
 }
 
-/* 🔗 Estilos compartidos para los bloques de enlaces (listas) */
-.nav-links, .footer-links {
-    display: flex; /* Alinea los enlaces horizontalmente */
-    list-style: none; /* Quita los puntos de lista */
-    gap: 30px; /* Espacio entre cada enlace */
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
     align-items: center;
 }
 
-/* 🎯 Estilo base de todos los enlaces */
-.nav-links a, .footer-links a {
-    text-decoration: none; /* Quita subrayado */
-    font-weight: 500; /* Seminegrita para resaltar sin exagerar */
-    padding: 8px 15px; /* Espaciado interno para hacerlo clicable */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: all 0.3s ease; /* Transición suave al hacer hover */
+.nav-links a {
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
     color: black;
 }
 
-/* 🖱️ Efecto hover para enlaces */
-.nav-links a:hover, .footer-links a:hover {
-    background: #f0f0f0; /* Fondo gris claro al pasar el mouse */
+
+.nav-links a:hover {
+    background: #f0f0f0;
     color: black;
 }
 
-/* 🧨 Botones de llamada a la acción (registro/contacto) */
-.cta-button, .contact-button {
-    padding: 10px 20px !important; /* Espaciado extra y forzado */
-    border: 2px solid black; /* Borde negro visible */
-    font-weight: bold; /* Texto fuerte */
+
+.cta-button {
+    padding: 10px 20px !important;
+    border: 2px solid black;
+    font-weight: bold;
     color: black;
 }
 
-/* 🖱️ Efecto hover para botones */
-.cta-button:hover, .contact-button:hover {
-    background: black; /* Fondo negro */
-    color: white; /* Texto blanco para contraste */
+.cta-button:hover {
+    background: black;
+    color: white;
 }
 
-/* 📄 Estilo para el contenido principal */
+
+/* 🏠 Sección: Portada Homepage -------------------------------------------------------------------> */
+
 .content {
-    flex: 1; /* Ocupa todo el espacio disponible en el layout */
-    padding: 40px; /* Espaciado interno amplio */
-    text-align: center; /* Centra el texto */
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
 }
 
-/* 📱 Estilos responsivos para pantallas pequeñas */
-@media (max-width: 600px) {
+.hero {
+    text-align: center;
+    margin-top: 25px;
+}
 
+.hero h1 {
+    font-size: 4em;
+    margin-bottom: 3px;
+    color: black;
+    font-weight: bold;
+}
+
+
+.hero .subtitle {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #666;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* 🏠 Sección: Barra de Búsqueda ---------------------------------------------------------------> */
+
+.main-search {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.search-input {
+    padding: 15px 20px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 1.1em;
+    width: 280px;
+    min-width: 80px;
+    flex: 1 1 250px;
+}
+
+.search-select {
+    padding: 15px 20px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 1.1em;
+    width: 200px;
+    min-width: 150px;
+    background: white;
+    flex: 0 1 180px;
+}
+
+.search-button {
+    padding: 15px 30px;
+    border: 2px solid black;
+    background: black;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    flex: 0 0 auto;
+}
+
+.search-button:hover {
+    background: white;
+    color: black;
+}
+
+
+.hero .tagline {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+
+/* 🏠 Sección: Prueba Social Numérica -----------------------------------------------------> */
+
+.stats-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+
+}
+
+.stat-item {
+    padding: 30px;
+}
+
+.stat-number {
+    font-size: 3em;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1.1em;
+    color: #666;
+}
+
+
+/* 🏠 Sección: Categorías de Eventos ------------------------------------------------------> */
+
+.genres-section {
+    margin-bottom: 80px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: black;
+}
+
+.genres-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.genre-card {
+    text-align: center;
+    padding: 40px 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.genre-card:hover {
+    background: #f0f0f0;
+    transform: translateY(-5px);
+}
+
+.genre-icon {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+.genre-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.genre-description {
+    color: #666;
+    font-size: 1em;
+}
+
+/* 🏠 Sección: Grilla de Eventos ------------------------------------------------------> */
+
+.featured-events {
+    margin-bottom: 80px;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.event-card {
+    border: 2px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.event-image {
+    height: 200px;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    border-bottom: 2px solid black;
+}
+
+.event-info {
+    padding: 25px;
+}
+
+.event-title {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.event-details {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.event-details p {
+    margin-bottom: 5px;
+}
+
+.event-price {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: black;
+}
+
+/* 🎟️ Sección: Detalle de Evento ---------------------------------------------------------> */
+
+.event-detail {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 60px;
+}
+
+.event-info-detail {
+    background: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-header {
+    position: relative;
+}
+
+.event-image-large {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6em;
+    color: #999;
+    border-bottom: 2px solid black;
+}
+
+.event-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: black;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.event-content {
+    padding: 40px;
+}
+
+.event-title-large {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.event-subtitle {
+    font-size: 1.3em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.event-details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.detail-icon {
+    font-size: 1.5em;
+    width: 40px;
+    text-align: center;
+}
+
+.detail-text {
+    flex: 1;
+}
+
+.detail-label {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.detail-value {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: black;
+}
+
+.event-description {
+    margin-bottom: 40px;
+}
+
+.description-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.description-text {
+    line-height: 1.6;
+    color: #666;
+    font-size: 1.1em;
+}
+
+.venue-info {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.venue-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.venue-address {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.venue-features {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feature-tag {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+
+/* 🎟️ Sección: Compra de Tickets ---------------------------------------------------------> */
+
+.purchase-section {
+    background: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 30px;
+    height: fit-content;
+    position: sticky;
+    top: 40px;
+}
+
+.purchase-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: black;
+    text-align: center;
+}
+
+.price-display {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.price-from {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.price-amount {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: black;
+}
+
+.ticket-options {
+    margin-bottom: 30px;
+}
+
+.option-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.ticket-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ticket-option:hover {
+    border-color: black;
+    background: #f9f9f9;
+}
+
+.ticket-option.selected {
+    border-color: black;
+    background: #f0f0f0;
+    border-width: 2px;
+}
+
+.option-info {
+    flex: 1;
+}
+
+.option-name {
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.option-description {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.option-price {
+    font-weight: bold;
+    color: black;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.quantity-label {
+    font-weight: 600;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-btn {
+    width: 35px;
+    height: 35px;
+    border: 2px solid black;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.quantity-btn:hover {
+    background: black;
+    color: white;
+}
+
+.quantity-display {
+    min-width: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.total-section {
+    padding: 20px 0;
+    border-top: 2px solid #f0f0f0;
+    margin-bottom: 25px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.total-final {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.buy-now-btn {
+    width: 100%;
+    padding: 15px;
+    background: black;
+    color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.buy-now-btn:hover {
+    background: white;
+    color: black;
+}
+
+.secure-info {
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+
+
+
+/* 🧩 Include: Footer -----------------------------------------------------------> */
+
+.footer {
+    border-top: 2px solid black;
+    display: flex;
+    justify-content: space-between; /* Espacio entre los elementos hijos */
+    align-items: center;
+    padding: 20px 30px;
+    background: white;
+}
+
+
+.footer-logo {
+    color: black;
+    text-decoration: none;
+}
+
+.footer-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+
+.footer-links a {
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    color: black;
+}
+
+.footer-links a:hover {
+    background: #f0f0f0;
+    color: black;
+}
+
+.contact-button {
+    padding: 10px 20px !important;
+    border: 2px solid black;
+    font-weight: bold;
+    color: black;
+}
+
+
+.contact-button:hover {
+    background: black;
+    color: white;
+}
+
+
+
+/* 📱 Reglas CSS desde 0px hasta los 943px de Ancho de la ventana */
+@media (max-width: 943px) {
+
+
+    /* Adaptaciones para la página de detalle del evento */
+    .event-detail {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .event-info-detail {
+        margin-bottom: 20px;
+    }
+
+    .event-info-detail .event-image-large {
+        height: 250px;
+        font-size: 4em;
+    }
+
+    .event-info-detail .event-details-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .event-info-detail .event-title {
+        font-size: 2.2em;
+    }
+
+    .purchase-section {
+        position: static;
+    }
+
+    /* Opciones de tickets responsivas */
+    .ticket-options .ticket-option {
+        padding: 12px;
+    }
+
+    .ticket-option .option-description {
+        font-size: 0.85em;
+    }
+
+    /* 🧩 Include: Navbar ---------------------------------------> */
     .navbar, .footer {
-        flex-direction: column; /* Coloca los elementos uno debajo del otro */
-        gap: 15px; /* Espacio entre elementos */
+        flex-direction: column;
+        gap: 15px;
     }
 
     .nav-links, .footer-links {
-        gap: 20px; /* Espacio entre enlaces más reducido */
+        gap: 20px;
     }
 
     .nav-links a, .footer-links a {
-        padding: 8px 15px; /* Mantiene el padding clicable */
-        font-size: 0.9em; /* Texto un poco más pequeño para celulares */
+        padding: 8px 15px;
+        font-size: 0.9em;
     }
 
     .navbar {
@@ -121,6 +774,61 @@ body {
         padding-bottom: 5px;
     }
 
+    /* 🏠 Sección: Portada Homepage ---------------------------------------------> */
+
+    .content {
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+
+
+    /* 🏠 Sección: Barra de Búsqueda -------------------------------------------> */
+
+    .main-search {
+        gap: 10px;
+        padding: 0 20px;
+    }
+
+    .search-input,
+    .search-select,
+    .search-button {
+        flex: 1 1 100%;
+        width: 100%;
+        margin-bottom: 5px;
+        padding: 15px;
+    }
+
+
+    /* 🏠 Sección: Prueba Social Numérica --------------------------------------> */
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    /* 🏠 Sección: Categorías de Eventos --------------------------------------> */
+
+    .genres-grid{
+        grid-template-columns: 1fr;
+    }
+
+
+    /* 🏠 Sección: Grilla de Eventos  --------------------------------------> */
+
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* 🧩 Include: Footer ---------------------------------------------> */
+
     .footer {
         padding-top: 25px;
         padding-bottom: 35px;
@@ -130,4 +838,6 @@ body {
         padding-bottom: 15px;
     }
 
+
 }
+

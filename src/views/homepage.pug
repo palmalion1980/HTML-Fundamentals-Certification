@@ -6,17 +6,112 @@
 include ../includes/head
 
 
+<!-- Contenedor principal del contenido de la página -->
 <main class="content">
 
-<!-- Título principal de la página -->
-<h1>¿Ganas de Divertirte?</h1>
+<!-- Sección hero mixin -->
++hero_section("assets/img/icons/mirror_ball.webp", "La noche nunca termina", "Tu acceso VIP al mejor underground electrónico")
 
-<!-- Descripción breve o eslogan debajo del título -->
-<p>Vive lo mejor de las fiestas modernas en TicketPass</p>
+
+<!-- Sección de búsqueda principal: permite filtrar eventos -->
+<section class="main-search">
+
+    <!-- Campo de texto para escribir el nombre del evento -->
+    <input type="text" class="search-input" placeholder="¿Qué evento buscas?">
+
+    <!-- Menú desplegable para seleccionar el género musical -->
+    <select class="search-select">
+    <option>Géneros</option>
+    <option>Techno</option>
+    <option>House</option>
+    <option>Trance</option>
+    <option>Drum & Bass</option>
+    <option>Progressive</option>
+    </select>
+
+    <!-- Segundo campo de texto para escribir la ciudad del evento -->
+    <input type="text" class="search-input" placeholder="Ciudad">
+
+    <!-- Botón de acción para ejecutar la búsqueda -->
+    <button class="search-button"><img src="#{base}assets/img/icons/fire.webp" width="30" alt="telemoji fire" style="position: absolute;margin-left: -21px;margin-top: -6px">&nbsp&nbsp Buscar</button>
+
+    <!-- Descripción más extensa que da contexto al contenido -->
+    <p class="subtitle">Descubre las fiestas más exclusivas, DJs internacionales y la escena electrónica más vibrante de tu ciudad.</p>
+
+</section>
+
+<!-- Sección de estadísticas: muestra números impresionantes de la plataforma -->
+<section class="stats-section">
+
+    <!-- Grid de 4 columnas con las estadísticas principales -->
+    <div class="stats-grid">
+
+    <!-- Estadística 1: Fiestas organizadas -->
+    <div class="stat-item">
+    <div class="stat-number">2.5K+</div> <!-- Número destacado -->
+    <div class="stat-label">Fiestas organizadas</div> <!-- Etiqueta descriptiva -->
+    </div>
+
+    <!-- Estadística 2: DJs internacionales -->
+    <div class="stat-item">
+    <div class="stat-number">150+</div>
+    <div class="stat-label">DJs internacionales</div>
+    </div>
+
+    <!-- Estadística 3: Ravers conectados -->
+    <div class="stat-item">
+    <div class="stat-number">50K+</div>
+    <div class="stat-label">Ravers conectados</div>
+    </div>
+
+    <!-- Estadística 4: Ciudades bailando -->
+    <div class="stat-item">
+    <div class="stat-number">20+</div>
+    <div class="stat-label">Ciudades bailando</div>
+
+    </div>
+    </div>
+</section>
+
+<!--Categoria de eventos -->
+    <section class="genres-section">
+
+        <!-- Título de la sección -->
+        <h2 class="section-title">Géneros que mueven la noche</h2>
+
+        <!-- Grid de 3 columnas con los géneros principales -->
+        <div class="genres-grid">
+
+            <!-- ⚠️ La identación en MUY IMPORTANTE ⚠️ -->
+            each value, index in events.category_events
+                +card_event_category(value.name, value.description)
+
+        </div>
+
+    </section>
+
+
+//- 🏠 Grilla de Eventos
+<section class="featured-events">
+
+<!-- 🏷️ Título principal de la sección -->
+<h2 class="section-title">Próximos eventos destacados</h2>
+
+<!-- 📦 Contenedor en formato grid con 3 columnas adaptables -->
+<div class="events-grid">
+
+<!-- Todos los Eventos -->
+each value, index in events.inperson_events
+    +card_event( value.name, value.date, value.place, `${value.start_time} - ${value.end_time}`, value.category, value.price_from )
+
+</div>
+
+</section>
+
+
+
 
 </main>
-
-
 
 
 //- Local Widget Components  --------------------------------------------------------------------->
@@ -33,7 +128,7 @@ include ../includes/head
 
 //- Local JS Script ------------------------------------------------------------------------------->
 script.
-    console.log("Hola Mundo desde Jade/Pug Project 😎")
+    console.log("Hola Mundo desde 🎟️ TicketPass 😎")
 
 
 //- Include Footer  ------------------------------------------------------------------------------>

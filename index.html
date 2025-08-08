@@ -1,4 +1,4 @@
-<!doctype html>
+</main><!doctype html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -13,8 +13,8 @@
 </head>
 <body><!-- Contenedor principal del menú de navegación -->
 <nav class="navbar">
-<!-- Enlace que actúa como logo y redirige al inicio -->
-<a href="#" class="logo">🎟️ TicketPass</a>
+<!-- Cambiamos el aburrido emoji por un telemoji en el logo -->
+<a href="/" class="logo"><img src="assets/img/icons/ticket_pass.webp" width="50" alt="telemoji ticket">&nbsp;TicketPass</a>
 <!-- Lista de enlaces de navegación -->
 <ul class="nav-links">
 <!-- Primer enlace: lleva a la sección de inicio de sesión -->
@@ -22,14 +22,168 @@
 <!-- Segundo enlace: lleva a la sección de registro y tiene estilo especial de botón -->
 <li><a href="#register" class="cta-button">Registrarse</a></li>
 </ul>
-</nav><main class="content">
-<!-- Título principal de la página -->
-<h1>¿Ganas de Divertirte?</h1>
-<!-- Descripción breve o eslogan debajo del título -->
-<p>Vive lo mejor de las fiestas modernas en TicketPass</p>
+</nav><!-- Contenedor principal del contenido de la página -->
+<main class="content">
+<!-- Sección hero mixin --><section class="hero">
+<img src="assets/img/icons/mirror_ball.webp" width="140">
+<!-- Título principal que capta la atención del visitante -->
+<h1>La noche nunca termina</h1>
+<!-- Subtítulo breve que refuerza el concepto del sitio -->
+<p class="tagline">Tu acceso VIP al mejor underground electrónico</p>
+</section><!-- Sección de búsqueda principal: permite filtrar eventos -->
+<section class="main-search">
+<!-- Campo de texto para escribir el nombre del evento -->
+<input type="text" class="search-input" placeholder="¿Qué evento buscas?">
+<!-- Menú desplegable para seleccionar el género musical -->
+<select class="search-select">
+<option>Géneros</option>
+<option>Techno</option>
+<option>House</option>
+<option>Trance</option>
+<option>Drum & Bass</option>
+<option>Progressive</option>
+</select>
+<!-- Segundo campo de texto para escribir la ciudad del evento -->
+<input type="text" class="search-input" placeholder="Ciudad">
+<!-- Botón de acción para ejecutar la búsqueda -->
+<button class="search-button"><img src="assets/img/icons/fire.webp" width="30" alt="telemoji fire" style="position: absolute;margin-left: -21px;margin-top: -6px">&nbsp&nbsp Buscar</button>
+<!-- Descripción más extensa que da contexto al contenido -->
+<p class="subtitle">Descubre las fiestas más exclusivas, DJs internacionales y la escena electrónica más vibrante de tu ciudad.</p>
+</section>
+<!-- Sección de estadísticas: muestra números impresionantes de la plataforma -->
+<section class="stats-section">
+<!-- Grid de 4 columnas con las estadísticas principales -->
+<div class="stats-grid">
+<!-- Estadística 1: Fiestas organizadas -->
+<div class="stat-item">
+<div class="stat-number">2.5K+</div> <!-- Número destacado -->
+<div class="stat-label">Fiestas organizadas</div> <!-- Etiqueta descriptiva -->
+</div>
+<!-- Estadística 2: DJs internacionales -->
+<div class="stat-item">
+<div class="stat-number">150+</div>
+<div class="stat-label">DJs internacionales</div>
+</div>
+<!-- Estadística 3: Ravers conectados -->
+<div class="stat-item">
+<div class="stat-number">50K+</div>
+<div class="stat-label">Ravers conectados</div>
+</div>
+<!-- Estadística 4: Ciudades bailando -->
+<div class="stat-item">
+<div class="stat-number">20+</div>
+<div class="stat-label">Ciudades bailando</div>
+</div>
+</div>
+</section>
+<!--Categoria de eventos -->
+<section class="genres-section">
+<!-- Título de la sección -->
+<h2 class="section-title">Géneros que mueven la noche</h2>
+<!-- Grid de 3 columnas con los géneros principales -->
+<div class="genres-grid">
+<!-- ⚠️ La identación en MUY IMPORTANTE ⚠️ --><div class="genre-card">
+<h3 class="genre-name">Techno</h3>
+<p class="genre-description">Beats hipnóticos underground que te transportan a otro mundo</p>
+</div><div class="genre-card">
+<h3 class="genre-name">House</h3>
+<p class="genre-description">Grooves contagiosos que hacen vibrar cada rincón</p>
+</div><div class="genre-card">
+<h3 class="genre-name">Trance</h3>
+<p class="genre-description">Viajes sonoros épicos llenos de energía celestial</p>
+</div><div class="genre-card">
+<h3 class="genre-name">Drum &amp; Bass</h3>
+<p class="genre-description">Energía pura a 175 BPM que acelera tu corazón</p>
+</div><div class="genre-card">
+<h3 class="genre-name">Progressive</h3>
+<p class="genre-description">Evolución musical que construye momentos únicos</p>
+</div><div class="genre-card">
+<h3 class="genre-name">Dubstep</h3>
+<p class="genre-description">Evolución musical que construye momentos únicos</p>
+</div></div>
+</section>
+<section class="featured-events">
+<!-- 🏷️ Título principal de la sección -->
+<h2 class="section-title">Próximos eventos destacados</h2>
+<!-- 📦 Contenedor en formato grid con 3 columnas adaptables -->
+<div class="events-grid">
+<!-- Todos los Eventos --><a href="evento/warehouse-sessions" class="event-card">
+<div class="event-image"></div>
+<div class="event-info">
+<h3 class="event-title">Warehouse Sessions</h3>
+<div class="event-details">
+<p>Sábado, 12 De Julio</p>
+<p>Underground Club</p>
+<p>22:00 - 06:00</p>
+<p>Techno</p>
+</div>
+<div class="event-price">Desde $25.000 CLP</div>
+</div>
+</a><a href="evento/neon-nights" class="event-card">
+<div class="event-image"></div>
+<div class="event-info">
+<h3 class="event-title">Neon Nights</h3>
+<div class="event-details">
+<p>Viernes, 18 De Julio</p>
+<p>Rooftop Paradise</p>
+<p>23:00 - 05:00</p>
+<p>House</p>
+</div>
+<div class="event-price">Desde $45.000 CLP</div>
+</div>
+</a><a href="evento/bass-overdrive" class="event-card">
+<div class="event-image"></div>
+<div class="event-info">
+<h3 class="event-title">Bass Overdrive</h3>
+<div class="event-details">
+<p>Domingo, 20 De Julio</p>
+<p>Industrial Zone</p>
+<p>21:00 - 04:00</p>
+<p>Trance</p>
+</div>
+<div class="event-price">Desde $55.000 CLP</div>
+</div>
+</a><a href="evento/sunset-rave" class="event-card">
+<div class="event-image"></div>
+<div class="event-info">
+<h3 class="event-title">Sunset Rave</h3>
+<div class="event-details">
+<p>Viernes, 25 De Julio</p>
+<p>Beach Club</p>
+<p>18:00 - 02:00</p>
+<p>Drum &amp; Bass</p>
+</div>
+<div class="event-price">Desde $75.000 CLP</div>
+</div>
+</a><a href="evento/electric-storm" class="event-card">
+<div class="event-image"></div>
+<div class="event-info">
+<h3 class="event-title">Electric Storm</h3>
+<div class="event-details">
+<p>Jueves, 31 De Julio</p>
+<p>Mega Arena</p>
+<p>20:00 - 06:00</p>
+<p>Progressive</p>
+</div>
+<div class="event-price">Desde $120.000 CLP</div>
+</div>
+</a><a href="evento/deep-house-vibes" class="event-card">
+<div class="event-image"></div>
+<div class="event-info">
+<h3 class="event-title">Deep House Vibes</h3>
+<div class="event-details">
+<p>Sábado, 02 De Agosto</p>
+<p>Secret Location</p>
+<p>22:30 - 05:30</p>
+<p>Dubstep</p>
+</div>
+<div class="event-price">Desde $35.000 CLP</div>
+</div>
+</a></div>
+</section>
 </main>
 <script>
-  console.log("Hola Mundo desde Jade/Pug Project 😎")
+  console.log("Hola Mundo desde 🎟️ TicketPass 😎")
   
   
 </script><footer class="footer">
